@@ -524,8 +524,9 @@
         lucide.createIcons();
 
         // Form submission logic
-        // Email nhận thông báo khi có khách đăng ký form
-        const EMAIL_NHAN_THONG_BÁO = "hungphamphunguyen@gmail.com"; 
+        // BƯỚC 1: LẤY ACCESS KEY TẠI https://web3forms.com/ (Nhập email của bạn vào trang web đó, họ sẽ gửi Key về email)
+        // BƯỚC 2: DÁN ACCESS KEY VÀO BÊN DƯỚI
+        const WEB3FORMS_ACCESS_KEY = "DÁN_KEY_CỦA_BẠN_VÀO_ĐÂY"; 
 
         async function handleFormSubmit(event) {
             event.preventDefault();
@@ -537,6 +538,11 @@
             const phone = document.getElementById('phone').value;
             const link = document.getElementById('link').value;
 
+            if (WEB3FORMS_ACCESS_KEY === "DÁN_KEY_CỦA_BẠN_VÀO_ĐÂY") {
+                alert("Vui lòng dán Web3Forms Access Key vào mã nguồn (dòng 519) trước khi gửi!");
+                return;
+            }
+
             // Chuyển nút sang trạng thái Loading
             btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Đang gửi thông tin...';
             btn.disabled = true;
@@ -544,15 +550,16 @@
             lucide.createIcons();
 
             try {
-                // Gọi API miễn phí của FormSubmit để gửi email
-                const response = await fetch(`https://formsubmit.co/ajax/${EMAIL_NHAN_THONG_BÁO}`, {
+                // Sử dụng Web3Forms (ổn định hơn FormSubmit)
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: "POST",
                     headers: { 
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
                     body: JSON.stringify({
-                        _subject: "🔥 CÓ KHÁCH HÀNG MỚI ĐĂNG KÝ FANPAGE AI!",
+                        access_key: WEB3FORMS_ACCESS_KEY,
+                        subject: "🔥 CÓ KHÁCH HÀNG MỚI ĐĂNG KÝ FANPAGE AI!",
                         "Họ và Tên": name,
                         "Số điện thoại (Zalo)": phone,
                         "Link Fanpage": link || "Không cung cấp"
