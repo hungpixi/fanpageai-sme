@@ -526,7 +526,7 @@
         // Form submission logic
         // BƯỚC 1: LẤY ACCESS KEY TẠI https://web3forms.com/ (Nhập email của bạn vào trang web đó, họ sẽ gửi Key về email)
         // BƯỚC 2: DÁN ACCESS KEY VÀO BÊN DƯỚI
-        const WEB3FORMS_ACCESS_KEY = "DÁN_KEY_CỦA_BẠN_VÀO_ĐÂY"; 
+        const WEB3FORMS_ACCESS_KEY = "9e94d7c3-7b05-4180-a926-f984fd8a9ad3"; 
 
         async function handleFormSubmit(event) {
             event.preventDefault();
@@ -537,11 +537,6 @@
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const link = document.getElementById('link').value;
-
-            if (WEB3FORMS_ACCESS_KEY === "DÁN_KEY_CỦA_BẠN_VÀO_ĐÂY") {
-                alert("Vui lòng dán Web3Forms Access Key vào mã nguồn (dòng 519) trước khi gửi!");
-                return;
-            }
 
             // Chuyển nút sang trạng thái Loading
             btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Đang gửi thông tin...';
