@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" width="260" height="48">
   <g transform="translate(4, 4) scale(0.12650060352647313) translate(-122.374687, -206.566605)">
     <path fill="#B11711" opacity="1.000000" stroke="none" 
 	d="
@@ -285,6 +285,6 @@ M309.035828,349.036987
 	C308.968964,348.981293 309.014282,349.017578 309.035828,349.036987 
 z"/>
   </g>
-  <text x="50" y="32" font-family="'Outfit', sans-serif" font-weight="700" font-size="22" fill="#ffffff">Fanpage</text>
-  <text x="145" y="32" font-family="'Outfit', sans-serif" font-weight="300" font-size="22" fill="#D53E0F">AI</text>
+  <text x="50" y="36" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" fill="#ffffff">Fanpage</text>
+  <text x="180" y="36" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" fill="#D53E0F">AI</text>
 </svg>
